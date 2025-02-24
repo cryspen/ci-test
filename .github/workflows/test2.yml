@@ -18,9 +18,12 @@ jobs:
       # ------------ Status check setup ------------
       # ------------ Skip on merge queue -----------
       - name: Setup
-        if: ${{ github.event_name != 'merge_group' }}
+        if: ${{ always() && github.event_name != 'merge_group' }}
         run: echo "Running status check job"
       # --------------------------------------------
+
+      - name: Intermediate
+        run: echo "Intermediate job was not skipped"
 
       # ------------ Status check report ------------
       # ------------ Skip on merge queue ------------
