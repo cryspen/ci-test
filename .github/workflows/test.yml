@@ -30,6 +30,18 @@ jobs:
       - name: Report
         run: echo "Step 3"
 
+  second-status:
+    if: ${{ always() }}
+    needs: [second]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Successful
+        if: ${{ !(contains(needs.*.result, 'failure')) }} 
+        run: exit 0 
+      - name: Failing
+        if: ${{ (contains(needs.*.result, 'failure')) }} 
+        run: exit 0 
+
   complex-status:
     if: ${{ always() }}
     needs: [third]
