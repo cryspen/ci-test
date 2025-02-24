@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Report
-      - run: echo "Run on pull request"
+        run: echo "Run on pull request"
   merge:
     if: ${{ github.event_name == 'merge_group' }}
     runs-on: ubuntu-latest
