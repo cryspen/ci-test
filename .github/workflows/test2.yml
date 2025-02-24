@@ -1,11 +1,8 @@
 
 on:
   merge_group:
-<<<<<<< Updated upstream
     # keep workflow specific if GH Actions adds more types in the future
     types: ["checks-requested"]
-=======
->>>>>>> Stashed changes
   push:
     branches: ["main", "dev"]
   pull_request:
