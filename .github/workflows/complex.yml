@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Report
-        run: echo "Step 2"
+        run: exit 1 # fail
   third:
     if: ${{ github.event_name == 'merge_group' }}
     needs: [second]
