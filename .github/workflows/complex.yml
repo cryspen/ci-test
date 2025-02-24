@@ -40,7 +40,7 @@ jobs:
         run: exit 0 
       - name: Failing
         if: ${{ (contains(needs.*.result, 'failure')) }} 
-        run: exit 0 
+        run: exit 1 
 
   complex-status:
     if: ${{ always() }}
