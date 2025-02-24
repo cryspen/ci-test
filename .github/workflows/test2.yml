@@ -1,8 +1,11 @@
 
 on:
   merge_group:
+<<<<<<< Updated upstream
     # keep workflow specific if GH Actions adds more types in the future
     types: ["checks-requested"]
+=======
+>>>>>>> Stashed changes
   push:
     branches: ["main", "dev"]
   pull_request:
@@ -12,22 +15,14 @@ on:
     
 jobs:
   build:
+    if: ${{ github.event_name == 'merge_group' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      # ------------ Status check setup ------------
-      # ------------ Skip on merge queue -----------
-      - name: Setup
-        if: ${{ always() && github.event_name != 'merge_group' }}
-        run: echo "Running status check job"
-      # --------------------------------------------
-
+      - name: Filtered
+      - run: echo "Skipped in merge queue"
+  build:
+    if: ${{ github.event_name != 'merge_group' }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Intermediate
         run: echo "Intermediate job was not skipped"
-
-      # ------------ Status check report ------------
-      # ------------ Skip on merge queue ------------
-      - name: Report
-        if: ${{ (always() && github.event_name == 'merge_group') || github.event_name != 'merge_group' }}
-        run: echo "Completed or skipped status check job"
-      # ---------------------------------------------
