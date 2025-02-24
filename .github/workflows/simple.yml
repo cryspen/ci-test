@@ -1,0 +1,34 @@
+
+on:
+  merge_group:
+  push:
+    branches: ["main", "dev"]
+  pull_request:
+    branches: ["main", "dev", "*"]
+  workflow_dispatch:
+
+    
+jobs:
+  pr:
+    if: ${{ github.event_name != 'merge_group' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report
+        run: echo "Run on pull request"
+  merge:
+    if: ${{ github.event_name == 'merge_group' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report
+        run: echo "Run on merge queue"
+  build-status:
+    if: ${{ always() }}
+    needs: [pr, merge]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Successful
+        if: ${{ !(contains(needs.*.result, 'failure')) }} 
+        run: exit 0 
+      - name: Failing
+        if: ${{ (contains(needs.*.result, 'failure')) }} 
+        run: exit 1 
