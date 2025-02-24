@@ -33,6 +33,7 @@ jobs:
   complex-status:
     if: ${{ always() }}
     needs: [third]
+    runs-on: ubuntu-latest
     steps:
       - name: Successful
         if: ${{ !(contains(needs.*.result, 'failure')) }} 
