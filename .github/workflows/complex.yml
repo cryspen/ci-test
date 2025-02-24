@@ -44,7 +44,7 @@ jobs:
 
   complex-status:
     if: ${{ always() }}
-    needs: [third]
+    needs: [first, second, third]
     runs-on: ubuntu-latest
     steps:
       - name: Successful
@@ -52,4 +52,4 @@ jobs:
         run: exit 0 
       - name: Failing
         if: ${{ (contains(needs.*.result, 'failure')) }} 
-        run: exit 0 
+        run: exit 1 
