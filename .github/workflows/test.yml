@@ -1,0 +1,42 @@
+
+on:
+  merge_group:
+  push:
+    branches: ["main", "dev"]
+  pull_request:
+    branches: ["main", "dev", "*"]
+  workflow_dispatch:
+
+    
+jobs:
+  first:
+    if: ${{ github.event_name == 'merge_group' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report
+        run: echo "Step 1"
+  second:
+    if: ${{ github.event_name == 'merge_group' }}
+    needs: [first]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report
+        run: echo "Step 2"
+  third:
+    if: ${{ github.event_name == 'merge_group' }}
+    needs: [second]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report
+        run: echo "Step 3"
+
+  build-status:
+    if: ${{ always() }}
+    needs: [third]
+    steps:
+      - name: Successful
+        if: ${{ !(contains(needs.*.result, 'failure')) }} 
+        run: exit 0 
+      - name: Failing
+        if: ${{ (contains(needs.*.result, 'failure')) }} 
+        run: exit 0 
