@@ -10,8 +10,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    if: ${{ matrix.bits == 32 && github.event_name != 'merge_group' }}
+  setup:
     strategy:
       fail-fast: false
       matrix:
@@ -20,17 +19,24 @@ jobs:
           - macos-latest
           - ubuntu-latest
           - windows-latest
+    steps:
+      - name: Report
+        run: echo "Setup completed"
+  build:
     runs-on: ${{ matrix.os }}
+    if: ${{ github.event_name == 'merge_group' || matrix.bits == 64 }}
     defaults:
       run:
         shell: bash
     steps:
+      - name: Filter
+        run: exit 0
       - name: Task
         run: echo "Task not filtered out"
 
   matrix-status:
     if: ${{ always() }}
-    needs: [build]
+    needs: [setup, build]
     runs-on: ubuntu-latest
     steps:
       - name: Successful
