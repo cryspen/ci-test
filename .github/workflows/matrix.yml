@@ -1,0 +1,43 @@
+name: Test filtering Matrix jobs
+
+on:
+  merge_group:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        bits: [32, 64]
+        os:
+          - macos-latest
+          - ubuntu-latest
+          - windows-latest
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Filter
+        if: ${{ matrix.bits == 32 && github.event_name != 'merge_group' }}
+        run: exit 0
+      - name: Task
+        run: echo "Task not filtered out"
+
+  matrix-status:
+    if: ${{ always() }}
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Successful
+        if: ${{ !(contains(needs.*.result, 'failure')) }}
+        run: exit 0
+      - name: Failing
+        if: ${{ (contains(needs.*.result, 'failure')) }}
+        run: exit 1
