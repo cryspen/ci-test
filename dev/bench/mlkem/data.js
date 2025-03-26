@@ -15,7 +15,7 @@ window.BENCHMARK_DATA = {
           },
           "id": "a0f76c9bb870e92b9458bf04017bc6a6fccf39ae",
           "message": "Test ML-KEM benchmarks",
-          "timestamp": "2025-02-24T15:18:41Z",
+          "timestamp": "2025-03-26T12:07:38Z",
           "url": "https://github.com/cryspen/ci-test/pull/12/commits/a0f76c9bb870e92b9458bf04017bc6a6fccf39ae"
         },
         "date": 1742992689466,
@@ -329,7 +329,7 @@ window.BENCHMARK_DATA = {
           },
           "id": "a0f76c9bb870e92b9458bf04017bc6a6fccf39ae",
           "message": "Test ML-KEM benchmarks",
-          "timestamp": "2025-02-24T15:18:41Z",
+          "timestamp": "2025-03-26T12:07:38Z",
           "url": "https://github.com/cryspen/ci-test/pull/12/commits/a0f76c9bb870e92b9458bf04017bc6a6fccf39ae"
         },
         "date": 1742992770458,
@@ -790,7 +790,7 @@ window.BENCHMARK_DATA = {
           },
           "id": "a0f76c9bb870e92b9458bf04017bc6a6fccf39ae",
           "message": "Test ML-KEM benchmarks",
-          "timestamp": "2025-02-24T15:18:41Z",
+          "timestamp": "2025-03-26T12:07:38Z",
           "url": "https://github.com/cryspen/ci-test/pull/12/commits/a0f76c9bb870e92b9458bf04017bc6a6fccf39ae"
         },
         "date": 1742992771694,
@@ -1251,7 +1251,7 @@ window.BENCHMARK_DATA = {
           },
           "id": "a0f76c9bb870e92b9458bf04017bc6a6fccf39ae",
           "message": "Test ML-KEM benchmarks",
-          "timestamp": "2025-02-24T15:18:41Z",
+          "timestamp": "2025-03-26T12:07:38Z",
           "url": "https://github.com/cryspen/ci-test/pull/12/commits/a0f76c9bb870e92b9458bf04017bc6a6fccf39ae"
         },
         "date": 1742992979283,
@@ -1712,7 +1712,7 @@ window.BENCHMARK_DATA = {
           },
           "id": "a0f76c9bb870e92b9458bf04017bc6a6fccf39ae",
           "message": "Test ML-KEM benchmarks",
-          "timestamp": "2025-02-24T15:18:41Z",
+          "timestamp": "2025-03-26T12:07:38Z",
           "url": "https://github.com/cryspen/ci-test/pull/12/commits/a0f76c9bb870e92b9458bf04017bc6a6fccf39ae"
         },
         "date": 1742993224277,
@@ -2026,7 +2026,7 @@ window.BENCHMARK_DATA = {
           },
           "id": "a0f76c9bb870e92b9458bf04017bc6a6fccf39ae",
           "message": "Test ML-KEM benchmarks",
-          "timestamp": "2025-02-24T15:18:41Z",
+          "timestamp": "2025-03-26T12:07:38Z",
           "url": "https://github.com/cryspen/ci-test/pull/12/commits/a0f76c9bb870e92b9458bf04017bc6a6fccf39ae"
         },
         "date": 1742993460502,
