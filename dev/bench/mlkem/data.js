@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1742995813028,
+  "lastUpdate": 1742995891400,
   "repoUrl": "https://github.com/cryspen/ci-test",
   "entries": {
     "ML-KEM Benchmark": [
@@ -3251,6 +3251,469 @@ window.BENCHMARK_DATA = {
             "unit": "ns/iter",
             "platform": "macos-latest_64",
             "range": "± 398"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "clara",
+            "username": "wysiwys",
+            "email": "144733119+wysiwys@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "15f90628ddbb82f6d280d7855883b818b3060353",
+          "message": "Merge pull request #12 from cryspen/wysiwys/mlkem-bench-test\n\nTest ML-KEM benchmarks",
+          "timestamp": "2025-03-26T13:09:57Z",
+          "url": "https://github.com/cryspen/ci-test/commit/15f90628ddbb82f6d280d7855883b818b3060353"
+        },
+        "date": 1742995890917,
+        "bigger_is_better": false,
+        "benches": [
+          {
+            "name": "ML-KEM mlkem512 Key Generation/portable (external random)",
+            "value": 19548,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 185"
+          },
+          {
+            "name": "ML-KEM mlkem512 Key Generation/unpacked portable (external random)",
+            "value": 19226,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 474"
+          },
+          {
+            "name": "ML-KEM mlkem512 Key Generation/avx2 (external random)",
+            "value": 10745,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 90"
+          },
+          {
+            "name": "ML-KEM mlkem512 Key Generation/unpacked avx2 (external random)",
+            "value": 10513,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 30"
+          },
+          {
+            "name": "ML-KEM mlkem768 Key Generation/portable (external random)",
+            "value": 33518,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 267"
+          },
+          {
+            "name": "ML-KEM mlkem768 Key Generation/unpacked portable (external random)",
+            "value": 32951,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 281"
+          },
+          {
+            "name": "ML-KEM mlkem768 Key Generation/avx2 (external random)",
+            "value": 15011,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 147"
+          },
+          {
+            "name": "ML-KEM mlkem768 Key Generation/unpacked avx2 (external random)",
+            "value": 14841,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 318"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Key Generation/portable (external random)",
+            "value": 51898,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 603"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Key Generation/unpacked portable (external random)",
+            "value": 51799,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 983"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Key Generation/avx2 (external random)",
+            "value": 20725,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 188"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Key Generation/unpacked avx2 (external random)",
+            "value": 20421,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 239"
+          },
+          {
+            "name": "ML-KEM mlkem512 Encapsulation/portable (external random)",
+            "value": 23131,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 288"
+          },
+          {
+            "name": "ML-KEM mlkem512 Encapsulation/unpacked portable (external random)",
+            "value": 14828,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 103"
+          },
+          {
+            "name": "ML-KEM mlkem512 Encapsulation/avx2 (external random)",
+            "value": 11473,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 99"
+          },
+          {
+            "name": "ML-KEM mlkem512 Encapsulation/unpacked avx2 (external random)",
+            "value": 5288,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 41"
+          },
+          {
+            "name": "ML-KEM mlkem768 Encapsulation/portable (external random)",
+            "value": 38673,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 598"
+          },
+          {
+            "name": "ML-KEM mlkem768 Encapsulation/unpacked portable (external random)",
+            "value": 21718,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 54"
+          },
+          {
+            "name": "ML-KEM mlkem768 Encapsulation/avx2 (external random)",
+            "value": 16303,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 99"
+          },
+          {
+            "name": "ML-KEM mlkem768 Encapsulation/unpacked avx2 (external random)",
+            "value": 6529,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 66"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Encapsulation/portable (external random)",
+            "value": 59340,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 622"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Encapsulation/unpacked portable (external random)",
+            "value": 31170,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 241"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Encapsulation/avx2 (external random)",
+            "value": 23300,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 129"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Encapsulation/unpacked avx2 (external random)",
+            "value": 9037,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 51"
+          },
+          {
+            "name": "ML-KEM mlkem512 Decapsulation/portable",
+            "value": 29098,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 312"
+          },
+          {
+            "name": "ML-KEM mlkem512 Decapsulation/unpacked portable",
+            "value": 21928,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 168"
+          },
+          {
+            "name": "ML-KEM mlkem512 Decapsulation/avx2",
+            "value": 12981,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 132"
+          },
+          {
+            "name": "ML-KEM mlkem512 Decapsulation/unpacked avx2",
+            "value": 8983,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 126"
+          },
+          {
+            "name": "ML-KEM mlkem768 Decapsulation/portable",
+            "value": 46257,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 1675"
+          },
+          {
+            "name": "ML-KEM mlkem768 Decapsulation/unpacked portable",
+            "value": 32075,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 69"
+          },
+          {
+            "name": "ML-KEM mlkem768 Decapsulation/avx2",
+            "value": 17845,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 207"
+          },
+          {
+            "name": "ML-KEM mlkem768 Decapsulation/unpacked avx2",
+            "value": 12139,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 68"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Decapsulation/portable",
+            "value": 68639,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 684"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Decapsulation/unpacked portable",
+            "value": 44441,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 127"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Decapsulation/avx2",
+            "value": 25503,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 288"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Decapsulation/unpacked avx2",
+            "value": 16590,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 63"
+          },
+          {
+            "name": "ML-KEM mlkem512 PK Validation/portable",
+            "value": 941,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 13"
+          },
+          {
+            "name": "ML-KEM mlkem512 PK Validation/avx2",
+            "value": 414,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 8"
+          },
+          {
+            "name": "ML-KEM mlkem768 PK Validation/portable",
+            "value": 1308,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 18"
+          },
+          {
+            "name": "ML-KEM mlkem768 PK Validation/avx2",
+            "value": 577,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 6"
+          },
+          {
+            "name": "ML-KEM mlkem1024 PK Validation/portable",
+            "value": 1806,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 22"
+          },
+          {
+            "name": "ML-KEM mlkem1024 PK Validation/avx2",
+            "value": 818,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 12"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Key Generation/portable (external random)",
+            "value": 19470,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 154"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Key Generation/unpacked portable (external random)",
+            "value": 19203,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 195"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Key Generation/portable (external random)",
+            "value": 33407,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 516"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Key Generation/unpacked portable (external random)",
+            "value": 32802,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 380"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Key Generation/portable (external random)",
+            "value": 52573,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 538"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Key Generation/unpacked portable (external random)",
+            "value": 52029,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 623"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Encapsulation/portable (external random)",
+            "value": 23154,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 160"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Encapsulation/unpacked portable (external random)",
+            "value": 14750,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 59"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Encapsulation/portable (external random)",
+            "value": 38826,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 318"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Encapsulation/unpacked portable (external random)",
+            "value": 21801,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 60"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Encapsulation/portable (external random)",
+            "value": 59447,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 1021"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Encapsulation/unpacked portable (external random)",
+            "value": 31127,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 197"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Decapsulation/portable",
+            "value": 29021,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 239"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Decapsulation/unpacked portable",
+            "value": 21996,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 76"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Decapsulation/portable",
+            "value": 46341,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 410"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Decapsulation/unpacked portable",
+            "value": 32088,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 127"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Decapsulation/portable",
+            "value": 68568,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 678"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Decapsulation/unpacked portable",
+            "value": 44411,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 251"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 PK Validation/portable",
+            "value": 918,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 19"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 PK Validation/portable",
+            "value": 1310,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 11"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 PK Validation/portable",
+            "value": 1832,
+            "unit": "ns/iter",
+            "platform": "ubuntu-latest_64",
+            "range": "± 28"
           }
         ]
       }
