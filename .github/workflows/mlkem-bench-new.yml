@@ -111,7 +111,7 @@ jobs:
           benchmark-data-dir-path: dev/bench/mlkem
           github-token: ${{ secrets.GITHUB_TOKEN }}
           # NOTE: pushes to current repository
-          gh-repository: ${{ github.repository }}
+          gh-repository: github.com/${{ github.repository }}
           # TODO: remove when migrating this workflow to libcrux
           gh-pages-branch: 'gh-pages-test'
           auto-push: true
