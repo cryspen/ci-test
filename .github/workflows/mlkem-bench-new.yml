@@ -107,7 +107,7 @@ jobs:
         uses: cryspen/benchmark-upload-and-plot-action@v1
         with:
           name: ML-KEM Benchmark
-          input-data-path-path: libcrux-ml-kem/bench-processed.txt
+          input-data-path: libcrux-ml-kem/bench-processed.txt
           benchmark-data-dir-path: dev/bench/mlkem
           github-token: ${{ secrets.GITHUB_TOKEN }}
           # NOTE: pushes to current repository
