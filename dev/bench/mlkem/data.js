@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1743069808296,
+  "lastUpdate": 1743070112633,
   "repoUrl": "https://github.com/cryspen/ci-test",
   "entries": {
     "ML-KEM Benchmark": [
@@ -9461,6 +9461,469 @@ window.BENCHMARK_DATA = {
             "unit": "ns/iter",
             "platform": "windows-latest_32",
             "range": "± 92"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "clara",
+            "username": "wysiwys",
+            "email": "144733119+wysiwys@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "ec074be67280d71b60a9585e33886d60f93f80ba",
+          "message": "Merge pull request #14 from cryspen/wysiwys/fix-status\n\nfix exit code in `complex.yml`",
+          "timestamp": "2025-03-27T09:37:34Z",
+          "url": "https://github.com/cryspen/ci-test/commit/ec074be67280d71b60a9585e33886d60f93f80ba"
+        },
+        "date": 1743070108459,
+        "bigger_is_better": false,
+        "benches": [
+          {
+            "name": "ML-KEM mlkem512 Key Generation/portable (external random)",
+            "value": 19397,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 196"
+          },
+          {
+            "name": "ML-KEM mlkem512 Key Generation/unpacked portable (external random)",
+            "value": 19039,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 559"
+          },
+          {
+            "name": "ML-KEM mlkem512 Key Generation/avx2 (external random)",
+            "value": 10634,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 111"
+          },
+          {
+            "name": "ML-KEM mlkem512 Key Generation/unpacked avx2 (external random)",
+            "value": 10374,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 97"
+          },
+          {
+            "name": "ML-KEM mlkem768 Key Generation/portable (external random)",
+            "value": 33340,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 335"
+          },
+          {
+            "name": "ML-KEM mlkem768 Key Generation/unpacked portable (external random)",
+            "value": 32460,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 333"
+          },
+          {
+            "name": "ML-KEM mlkem768 Key Generation/avx2 (external random)",
+            "value": 15054,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 155"
+          },
+          {
+            "name": "ML-KEM mlkem768 Key Generation/unpacked avx2 (external random)",
+            "value": 14692,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 155"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Key Generation/portable (external random)",
+            "value": 51763,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 441"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Key Generation/unpacked portable (external random)",
+            "value": 51521,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 659"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Key Generation/avx2 (external random)",
+            "value": 20945,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 221"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Key Generation/unpacked avx2 (external random)",
+            "value": 20469,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 218"
+          },
+          {
+            "name": "ML-KEM mlkem512 Encapsulation/portable (external random)",
+            "value": 23079,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 220"
+          },
+          {
+            "name": "ML-KEM mlkem512 Encapsulation/unpacked portable (external random)",
+            "value": 14669,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 216"
+          },
+          {
+            "name": "ML-KEM mlkem512 Encapsulation/avx2 (external random)",
+            "value": 11732,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 118"
+          },
+          {
+            "name": "ML-KEM mlkem512 Encapsulation/unpacked avx2 (external random)",
+            "value": 5399,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 75"
+          },
+          {
+            "name": "ML-KEM mlkem768 Encapsulation/portable (external random)",
+            "value": 38400,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 375"
+          },
+          {
+            "name": "ML-KEM mlkem768 Encapsulation/unpacked portable (external random)",
+            "value": 21452,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 457"
+          },
+          {
+            "name": "ML-KEM mlkem768 Encapsulation/avx2 (external random)",
+            "value": 16339,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 176"
+          },
+          {
+            "name": "ML-KEM mlkem768 Encapsulation/unpacked avx2 (external random)",
+            "value": 6780,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 113"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Encapsulation/portable (external random)",
+            "value": 58731,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 705"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Encapsulation/unpacked portable (external random)",
+            "value": 31182,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 779"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Encapsulation/avx2 (external random)",
+            "value": 22741,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 220"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Encapsulation/unpacked avx2 (external random)",
+            "value": 9314,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 174"
+          },
+          {
+            "name": "ML-KEM mlkem512 Decapsulation/portable",
+            "value": 28742,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 233"
+          },
+          {
+            "name": "ML-KEM mlkem512 Decapsulation/unpacked portable",
+            "value": 21853,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 138"
+          },
+          {
+            "name": "ML-KEM mlkem512 Decapsulation/avx2",
+            "value": 12593,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 94"
+          },
+          {
+            "name": "ML-KEM mlkem512 Decapsulation/unpacked avx2",
+            "value": 9169,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 122"
+          },
+          {
+            "name": "ML-KEM mlkem768 Decapsulation/portable",
+            "value": 46293,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 542"
+          },
+          {
+            "name": "ML-KEM mlkem768 Decapsulation/unpacked portable",
+            "value": 31716,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 305"
+          },
+          {
+            "name": "ML-KEM mlkem768 Decapsulation/avx2",
+            "value": 17862,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 201"
+          },
+          {
+            "name": "ML-KEM mlkem768 Decapsulation/unpacked avx2",
+            "value": 12380,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 208"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Decapsulation/portable",
+            "value": 68514,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 953"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Decapsulation/unpacked portable",
+            "value": 44654,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 383"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Decapsulation/avx2",
+            "value": 25574,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 277"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Decapsulation/unpacked avx2",
+            "value": 17170,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 199"
+          },
+          {
+            "name": "ML-KEM mlkem512 PK Validation/portable",
+            "value": 952,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 54"
+          },
+          {
+            "name": "ML-KEM mlkem512 PK Validation/avx2",
+            "value": 468,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 38"
+          },
+          {
+            "name": "ML-KEM mlkem768 PK Validation/portable",
+            "value": 1376,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 71"
+          },
+          {
+            "name": "ML-KEM mlkem768 PK Validation/avx2",
+            "value": 685,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 56"
+          },
+          {
+            "name": "ML-KEM mlkem1024 PK Validation/portable",
+            "value": 1809,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 93"
+          },
+          {
+            "name": "ML-KEM mlkem1024 PK Validation/avx2",
+            "value": 901,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 68"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Key Generation/portable (external random)",
+            "value": 19351,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 244"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Key Generation/unpacked portable (external random)",
+            "value": 19015,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 257"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Key Generation/portable (external random)",
+            "value": 33466,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 396"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Key Generation/unpacked portable (external random)",
+            "value": 32556,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 295"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Key Generation/portable (external random)",
+            "value": 52157,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 510"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Key Generation/unpacked portable (external random)",
+            "value": 51352,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 711"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Encapsulation/portable (external random)",
+            "value": 23031,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 231"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Encapsulation/unpacked portable (external random)",
+            "value": 14808,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 232"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Encapsulation/portable (external random)",
+            "value": 38517,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 482"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Encapsulation/unpacked portable (external random)",
+            "value": 21696,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 165"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Encapsulation/portable (external random)",
+            "value": 58742,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 721"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Encapsulation/unpacked portable (external random)",
+            "value": 31291,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 244"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Decapsulation/portable",
+            "value": 28606,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 286"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Decapsulation/unpacked portable",
+            "value": 21917,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 174"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Decapsulation/portable",
+            "value": 46125,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 436"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Decapsulation/unpacked portable",
+            "value": 31983,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 344"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Decapsulation/portable",
+            "value": 68467,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 1187"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Decapsulation/unpacked portable",
+            "value": 44463,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 299"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 PK Validation/portable",
+            "value": 947,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 54"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 PK Validation/portable",
+            "value": 1416,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 84"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 PK Validation/portable",
+            "value": 1816,
+            "unit": "ns/iter",
+            "platform": "windows-latest_64",
+            "range": "± 104"
           }
         ]
       }
