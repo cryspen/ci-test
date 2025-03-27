@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1743069455404,
+  "lastUpdate": 1743069496811,
   "repoUrl": "https://github.com/cryspen/ci-test",
   "entries": {
     "ML-KEM Benchmark": [
@@ -7756,6 +7756,469 @@ window.BENCHMARK_DATA = {
             "unit": "ns/iter",
             "platform": "ubuntu-latest_32",
             "range": "± 149"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "name": "clara",
+            "username": "wysiwys",
+            "email": "144733119+wysiwys@users.noreply.github.com"
+          },
+          "committer": {
+            "name": "GitHub",
+            "username": "web-flow",
+            "email": "noreply@github.com"
+          },
+          "id": "ec074be67280d71b60a9585e33886d60f93f80ba",
+          "message": "Merge pull request #14 from cryspen/wysiwys/fix-status\n\nfix exit code in `complex.yml`",
+          "timestamp": "2025-03-27T09:37:34Z",
+          "url": "https://github.com/cryspen/ci-test/commit/ec074be67280d71b60a9585e33886d60f93f80ba"
+        },
+        "date": 1743069495797,
+        "bigger_is_better": false,
+        "benches": [
+          {
+            "name": "ML-KEM mlkem512 Key Generation/portable (external random)",
+            "value": 9520,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 192"
+          },
+          {
+            "name": "ML-KEM mlkem512 Key Generation/unpacked portable (external random)",
+            "value": 9975,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 708"
+          },
+          {
+            "name": "ML-KEM mlkem512 Key Generation/neon (external random)",
+            "value": 5565,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 207"
+          },
+          {
+            "name": "ML-KEM mlkem512 Key Generation/unpacked neon (external random)",
+            "value": 5622,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 327"
+          },
+          {
+            "name": "ML-KEM mlkem768 Key Generation/portable (external random)",
+            "value": 17170,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 1101"
+          },
+          {
+            "name": "ML-KEM mlkem768 Key Generation/unpacked portable (external random)",
+            "value": 16856,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 1282"
+          },
+          {
+            "name": "ML-KEM mlkem768 Key Generation/neon (external random)",
+            "value": 9779,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 355"
+          },
+          {
+            "name": "ML-KEM mlkem768 Key Generation/unpacked neon (external random)",
+            "value": 9560,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 338"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Key Generation/portable (external random)",
+            "value": 27257,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 1459"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Key Generation/unpacked portable (external random)",
+            "value": 26280,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 1119"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Key Generation/neon (external random)",
+            "value": 13657,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 378"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Key Generation/unpacked neon (external random)",
+            "value": 13216,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 167"
+          },
+          {
+            "name": "ML-KEM mlkem512 Encapsulation/portable (external random)",
+            "value": 10822,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 364"
+          },
+          {
+            "name": "ML-KEM mlkem512 Encapsulation/unpacked portable (external random)",
+            "value": 5705,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 157"
+          },
+          {
+            "name": "ML-KEM mlkem512 Encapsulation/neon (external random)",
+            "value": 5640,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 172"
+          },
+          {
+            "name": "ML-KEM mlkem512 Encapsulation/unpacked neon (external random)",
+            "value": 2753,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 100"
+          },
+          {
+            "name": "ML-KEM mlkem768 Encapsulation/portable (external random)",
+            "value": 18028,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 549"
+          },
+          {
+            "name": "ML-KEM mlkem768 Encapsulation/unpacked portable (external random)",
+            "value": 8006,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 469"
+          },
+          {
+            "name": "ML-KEM mlkem768 Encapsulation/neon (external random)",
+            "value": 10365,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 329"
+          },
+          {
+            "name": "ML-KEM mlkem768 Encapsulation/unpacked neon (external random)",
+            "value": 3925,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 226"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Encapsulation/portable (external random)",
+            "value": 27525,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 673"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Encapsulation/unpacked portable (external random)",
+            "value": 11040,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 613"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Encapsulation/neon (external random)",
+            "value": 14475,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 340"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Encapsulation/unpacked neon (external random)",
+            "value": 5181,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 379"
+          },
+          {
+            "name": "ML-KEM mlkem512 Decapsulation/portable",
+            "value": 12502,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 611"
+          },
+          {
+            "name": "ML-KEM mlkem512 Decapsulation/unpacked portable",
+            "value": 9263,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 523"
+          },
+          {
+            "name": "ML-KEM mlkem512 Decapsulation/neon",
+            "value": 7705,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 1265"
+          },
+          {
+            "name": "ML-KEM mlkem512 Decapsulation/unpacked neon",
+            "value": 5437,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 497"
+          },
+          {
+            "name": "ML-KEM mlkem768 Decapsulation/portable",
+            "value": 23349,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 2804"
+          },
+          {
+            "name": "ML-KEM mlkem768 Decapsulation/unpacked portable",
+            "value": 13986,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 2739"
+          },
+          {
+            "name": "ML-KEM mlkem768 Decapsulation/neon",
+            "value": 13783,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 2506"
+          },
+          {
+            "name": "ML-KEM mlkem768 Decapsulation/unpacked neon",
+            "value": 8092,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 1380"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Decapsulation/portable",
+            "value": 38043,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 7952"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Decapsulation/unpacked portable",
+            "value": 20390,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 2819"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Decapsulation/neon",
+            "value": 20564,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 2748"
+          },
+          {
+            "name": "ML-KEM mlkem1024 Decapsulation/unpacked neon",
+            "value": 11050,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 1432"
+          },
+          {
+            "name": "ML-KEM mlkem512 PK Validation/portable",
+            "value": 644,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 370"
+          },
+          {
+            "name": "ML-KEM mlkem512 PK Validation/neon",
+            "value": 493,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 190"
+          },
+          {
+            "name": "ML-KEM mlkem768 PK Validation/portable",
+            "value": 939,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 370"
+          },
+          {
+            "name": "ML-KEM mlkem768 PK Validation/neon",
+            "value": 731,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 159"
+          },
+          {
+            "name": "ML-KEM mlkem1024 PK Validation/portable",
+            "value": 1267,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 515"
+          },
+          {
+            "name": "ML-KEM mlkem1024 PK Validation/neon",
+            "value": 967,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 250"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Key Generation/portable (external random)",
+            "value": 10373,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 1040"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Key Generation/unpacked portable (external random)",
+            "value": 10252,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 592"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Key Generation/portable (external random)",
+            "value": 17495,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 1278"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Key Generation/unpacked portable (external random)",
+            "value": 18365,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 2509"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Key Generation/portable (external random)",
+            "value": 27126,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 963"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Key Generation/unpacked portable (external random)",
+            "value": 26866,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 778"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Encapsulation/portable (external random)",
+            "value": 11830,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 507"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Encapsulation/unpacked portable (external random)",
+            "value": 7006,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 894"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Encapsulation/portable (external random)",
+            "value": 20488,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 1673"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Encapsulation/unpacked portable (external random)",
+            "value": 9483,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 1077"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Encapsulation/portable (external random)",
+            "value": 32475,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 3610"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Encapsulation/unpacked portable (external random)",
+            "value": 13870,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 1939"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Decapsulation/portable",
+            "value": 15565,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 2775"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 Decapsulation/unpacked portable",
+            "value": 10270,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 8722"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Decapsulation/portable",
+            "value": 24379,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 3425"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 Decapsulation/unpacked portable",
+            "value": 22122,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 3857"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Decapsulation/portable",
+            "value": 51405,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 8825"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 Decapsulation/unpacked portable",
+            "value": 35035,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 8841"
+          },
+          {
+            "name": "portable ML-KEM mlkem512 PK Validation/portable",
+            "value": 861,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 255"
+          },
+          {
+            "name": "portable ML-KEM mlkem768 PK Validation/portable",
+            "value": 1216,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 416"
+          },
+          {
+            "name": "portable ML-KEM mlkem1024 PK Validation/portable",
+            "value": 1459,
+            "unit": "ns/iter",
+            "platform": "macos-latest_64",
+            "range": "± 789"
           }
         ]
       }
