@@ -32,7 +32,7 @@ jobs:
 
   second-status:
     if: ${{ always() }}
-    needs: [second]
+    needs: [first, second]
     runs-on: ubuntu-latest
     steps:
       - name: Successful
