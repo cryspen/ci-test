@@ -78,14 +78,6 @@ jobs:
           echo "RUST_TARGET_FLAG=--target=i686-unknown-linux-gnu" > $GITHUB_ENV
         if: ${{ matrix.bits == 32 && matrix.os == 'ubuntu-latest' }}
 
-      # - name: 🔨 Build
-      #   run: cargo build --benches
-
-      # - name: ⬆ Upload build
-      #   uses: ./.github/actions/upload_artifacts
-      #   with:
-      #     name: benchmarks_${{ matrix.os }}_${{ matrix.bits }}
-
       # Benchmarks ...
 
       - name: 🏃🏻‍♀️ Benchmarks
