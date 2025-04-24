@@ -40,7 +40,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        # TODO: remove when migrating this workflow to libcrux
         with:
           repository: 'cryspen/libcrux'
 
@@ -99,7 +98,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           # NOTE: pushes to current repository
           gh-repository: github.com/${{ github.repository }}
-          # TODO: remove when migrating this workflow to libcrux
           gh-pages-branch: 'gh-pages-test'
           auto-push: true
 
