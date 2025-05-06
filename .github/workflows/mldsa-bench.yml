@@ -98,7 +98,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           # NOTE: pushes to current repository
           gh-repository: github.com/${{ github.repository }}
-          gnh-pages-branch: 'gh-pages-test'
+          gh-pages-branch: 'gh-pages-test'
           group-by: implementation,label,os
           schema: implementation,keySize,label,hardware,os
           auto-push: true
