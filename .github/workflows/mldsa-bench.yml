@@ -99,7 +99,7 @@ jobs:
           # NOTE: pushes to current repository
           gh-repository: github.com/${{ github.repository }}
           gh-pages-branch: 'gh-pages-test'
-          group-by: implementation,keySize,os
+          group-by: label,keySize,os
           schema: implementation,keySize,label,hardware,os
           auto-push: true
           fail-on-alert: true
