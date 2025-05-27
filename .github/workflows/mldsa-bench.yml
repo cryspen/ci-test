@@ -40,6 +40,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          repository: 'cryspen/libcrux'
+          ref: 'wysiwys/upgrade-benchmark-action'
 
       - run: echo "RUST_TARGET_FLAG=" > $GITHUB_ENV
         if: ${{ matrix.bits == 64 }}
