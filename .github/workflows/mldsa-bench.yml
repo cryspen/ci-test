@@ -101,6 +101,7 @@ jobs:
           gh-repository: github.com/${{ github.repository }}
           group-by: label,keySize,os
           schema: implementation,keySize,label,hardware,os
+          base-path: bench
           auto-push: true
           fail-on-alert: true
           alert-threshold: 200%

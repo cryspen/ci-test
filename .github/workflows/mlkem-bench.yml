@@ -103,6 +103,7 @@ jobs:
           gh-repository: github.com/${{ github.repository }}
           gh-pages-branch: 'gh-pages-test'
           group-by: os,keySize
+          base-path: bench
           schema: category,keySize,name,platform,api,os
           auto-push: true
           fail-on-alert: true
