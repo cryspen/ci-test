@@ -42,7 +42,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: 'cryspen/libcrux'
-          ref: 'franziskus/mldsa-benches-ci'
+          ref: 'wysiwys/upgrade-benchmark-action'
 
       - run: echo "RUST_TARGET_FLAG=" > $GITHUB_ENV
         if: ${{ matrix.bits == 64 }}
@@ -90,15 +90,13 @@ jobs:
           data-out-path: libcrux-ml-dsa/bench-processed.json
 
       - name: Upload benchmarks
-        uses: cryspen/benchmark-upload-and-plot-action@v2
+        uses: cryspen/benchmark-upload-and-plot-action@v3
         with:
           name: ML-DSA Benchmark
           input-data-path: libcrux-ml-dsa/bench-processed.json
-          benchmark-data-dir-path: dev/bench/mldsa
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          # NOTE: pushes to current repository
-          gh-repository: github.com/${{ github.repository }}
           gh-pages-branch: 'gh-pages-test'
+          gh-repository: github.com/${{ github.repository }}
           group-by: label,keySize,os
           schema: implementation,keySize,label,hardware,os
           auto-push: true

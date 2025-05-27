@@ -42,6 +42,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: 'cryspen/libcrux'
+          ref: 'wysiwys/upgrade-benchmark-action'
 
       - name: Update dependencies
         run: cargo update
@@ -80,26 +81,30 @@ jobs:
       # Benchmarks ...
 
       - name: 🏃🏻‍♀️ Benchmarks
-        run: cargo bench --verbose $RUST_TARGET_FLAG -- --output-format bencher | tee bench.txt 
+        run: cargo bench --verbose $RUST_TARGET_FLAG -- --output-format bencher | tee bench.txt
+
       - name: Extract benchmarks
-        uses: cryspen/benchmark-data-extract-transform@v1
+        uses: cryspen/benchmark-data-extract-transform@v2
         with:
           name: ML-KEM Benchmark
           tool: 'cargo'
           os: ${{ matrix.os }}_${{ matrix.bits }}
           output-file-path: libcrux-ml-kem/bench.txt
-          data-out-path: libcrux-ml-kem/bench-processed.txt
+          data-out-path: libcrux-ml-kem/bench-processed.json
+
       - name: Upload benchmarks
-        uses: cryspen/benchmark-upload-and-plot-action@v1
+        uses: cryspen/benchmark-upload-and-plot-action@v3
         with:
           name: ML-KEM Benchmark
-          input-data-path: libcrux-ml-kem/bench-processed.txt
-          benchmark-data-dir-path: dev/bench/mlkem
+          input-data-path: libcrux-ml-kem/bench-processed.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          # NOTE: pushes to current repository
           gh-repository: github.com/${{ github.repository }}
           gh-pages-branch: 'gh-pages-test'
+          group-by: os,keySize
+          schema: category,keySize,name,platform,api,os
           auto-push: true
+          fail-on-alert: true
+          alert-threshold: 200%
 
   mlkem-bench-status:
     if: ${{ always() }}
