@@ -96,6 +96,7 @@ jobs:
           input-data-path: libcrux-ml-kem/bench-processed.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
           gh-repository: github.com/${{ github.repository }}
+          gh-pages-branch: 'gh-pages-test'
           group-by: os,keySize
           schema: category,keySize,name,platform,api,os
           auto-push: true

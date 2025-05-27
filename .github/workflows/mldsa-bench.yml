@@ -92,6 +92,7 @@ jobs:
           name: ML-DSA Benchmark
           input-data-path: libcrux-ml-dsa/bench-processed.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          gh-pages-branch: 'gh-pages-test'
           gh-repository: github.com/${{ github.repository }}
           group-by: label,keySize,os
           schema: implementation,keySize,label,hardware,os
