@@ -44,7 +44,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: 'cryspen/libcrux'
-          ref: 'wysiwys/upgrade-benchmark-action'
+          ref: '87f49c6c5517daebf596903972981b1f3e34fbb1'
 
       - name: Update dependencies
         run: cargo update
