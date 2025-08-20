@@ -1,4 +1,4 @@
-name: ML-DSA - Benchmark
+name: Test Comment Action
 
 on:
   merge_group:
