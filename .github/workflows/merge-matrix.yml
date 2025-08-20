@@ -31,7 +31,18 @@ jobs:
     steps:
       - name: make ${{ matrix.os }} ${{ matrix.bits }}
         run: |
-          echo '[ { "name":"${{ matrix.os }}-${{ matrix.bits }}", "os": "${{ matrix.os }}", "bits":"${{ matrix.bits }}", "foo": 123, value: 100, range: "+- 1"} ]' > ${{matrix.os}}-${{matrix.bits}}.json
+          cat >${{matrix.os}}-${{matrix.bits}}.json <<<EOF
+          [
+            {
+              "name": "${{ matrix.os }}-${{ matrix.bits }}",
+              "os":   "${{ matrix.os }}",
+              "bits": "${{ matrix.bits }}",
+              "foo": 123,
+              "value": 100,
+              "range": "+- 1"
+            }
+          ]
+          EOF
       - uses: actions/upload-artifact@v4
         with:
           name: benchdata-${{matrix.os}}-${{matrix.bits}}.json
