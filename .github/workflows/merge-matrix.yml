@@ -1,0 +1,54 @@
+name: ML-DSA - Benchmark
+
+on:
+  merge_group:
+  pull_request:
+    branches: ["main", "dev"]
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+
+jobs:
+  benchmark:
+    strategy:
+      fail-fast: true
+      matrix:
+        bits: [32, 64]
+        os:
+          - macos-latest
+          - ubuntu-latest
+          - windows-latest
+        exclude:
+          # There's no such thing as 32-bit macOS
+          - bits: 32
+            os: "macos-latest"
+          - bits: 32
+            os: "macos-13"
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+        working-directory: libcrux-ml-dsa
+    steps:
+      - name: make ${{ matrix.os }} ${{ matrix.bits }}
+        run: |
+          echo '[ { "name":"${{ matrix.os }}-${{ matrix.bits }}", "os": "${{ matrix.os }}", "bits":"${{ matrix.bits }}", "foo": 123, value: 100, range: "+- 1"} ]' > ${{matrix.os}}-${{matrix.bits}}.json
+      - uses: actions/upload-artifact@v4
+        with:
+          - name: benchdata-${{matrix.os}}-${{matrix.bits}}.json
+            path: ${{matrix.os}}-${{matrix.bits}}.json
+
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - run: mkdir benchdata
+      - uses: actions/download-artifact@v5
+        with:
+          pattern: benchdata-*.json
+          path: benchdata/
+      - run: jq -s add benchdata/* > benchdata-all.json
+      - uses: cryspen/benchmark-comment-and-plot-action@main
+        with:
+          schema: name,os,bits,foo
+          input-data-path: benchdata-all.json
+
