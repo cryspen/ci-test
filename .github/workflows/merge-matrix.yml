@@ -28,7 +28,6 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: libcrux-ml-dsa
     steps:
       - name: make ${{ matrix.os }} ${{ matrix.bits }}
         run: |
