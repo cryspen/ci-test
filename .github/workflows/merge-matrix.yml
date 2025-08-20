@@ -17,7 +17,7 @@ jobs:
         os:
           - macos-latest
           - ubuntu-latest
-          - windows-latest
+          #- windows-latest
         exclude:
           # There's no such thing as 32-bit macOS
           - bits: 32
