@@ -46,6 +46,7 @@ jobs:
         with:
           pattern: benchdata-*.json
           path: benchdata/
+          merge-multiple: true
       - run: ls -lR
       - run: jq -s add benchdata/* > benchdata-all.json
       - uses: cryspen/benchmark-comment-and-plot-action@main
