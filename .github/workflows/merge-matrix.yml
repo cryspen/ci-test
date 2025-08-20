@@ -29,10 +29,6 @@ jobs:
       run:
         shell: bash
     steps:
-      - uses: actions/checkout@v4
-        with:
-          repository: 'cryspen/libcrux'
-
       - name: make ${{ matrix.os }} ${{ matrix.bits }}
         run: |
           cat >${{matrix.os}}-${{matrix.bits}}.json <<EOF
@@ -56,6 +52,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: benchmark
     steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: 'cryspen/libcrux'
+
       - run: mkdir benchdata
       - uses: actions/download-artifact@v5
         with:
