@@ -31,7 +31,7 @@ jobs:
     steps:
       - name: make ${{ matrix.os }} ${{ matrix.bits }}
         run: |
-          cat >${{matrix.os}}-${{matrix.bits}}.json <<<EOF
+          cat >${{matrix.os}}-${{matrix.bits}}.json <<EOF
           [
             {
               "name": "${{ matrix.os }}-${{ matrix.bits }}",
