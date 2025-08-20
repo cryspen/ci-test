@@ -105,6 +105,7 @@ jobs:
       - run: jq -s add benchdata/* > benchdata-all.json
       - uses: cryspen/benchmark-comment-and-plot-action@main
         with:
+          gh-repository: cryspen/libcrux
           group-by: os,keySize
           schema: category,keySize,name,platform,api,os
           input-data-path: benchdata-all.json
