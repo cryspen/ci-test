@@ -39,6 +39,7 @@ jobs:
 
   merge:
     runs-on: ubuntu-latest
+    needs: benchmark
     steps:
       - run: mkdir benchdata
       - uses: actions/download-artifact@v5
