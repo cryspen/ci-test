@@ -210,4 +210,7 @@ jobs:
           $(cat report-mlkem.md)
           $(cat report-mldsa.md)
           EOF
+      - uses: mshick/add-pr-comment@v2
+        with:
+          message-path: comment.md
 
