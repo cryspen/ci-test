@@ -186,6 +186,7 @@ jobs:
           jq -s add benchdata/benchdata-mldsa-* > benchdata-mldsa.json
       - uses: cryspen/benchmark-comment-and-plot-action@main
         with:
+          id: mlkem
           gh-repository: cryspen/libcrux
           group-by: os,keySize
           schema: category,keySize,name,platform,api,os
@@ -194,6 +195,7 @@ jobs:
           output-md: report-mlkem.md
       - uses: cryspen/benchmark-comment-and-plot-action@main
         with:
+          id: mldsa
           gh-repository: cryspen/libcrux
           group-by: label,keySize,os
           schema: implementation,keySize,label,hardware,os
@@ -202,6 +204,7 @@ jobs:
           output-md: report-mldsa.md
       - run: |
           cat >comment.md <<EOF
+          *beep boop, I am the benchmark bot*
 
           # Benchmark Report
           $(cat report-mlkem.md)
