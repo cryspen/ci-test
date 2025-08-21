@@ -15,10 +15,10 @@ jobs:
       matrix:
         bits: [32, 64]
         os:
-          - macos-13
-          - macos-latest
+          #- macos-13
+          #- macos-latest
           - ubuntu-latest
-          - windows-latest
+          #- windows-latest
         exclude:
           # There's no such thing as 32-bit macOS
           - bits: 32
@@ -212,7 +212,7 @@ jobs:
         uses: cryspen/benchmark-upload-and-plot-action@v3
         with:
           name: ML-KEM Benchmark
-          input-data-path: libcrux-ml-kem/bench-mlkem.json
+          input-data-path: benchdata-mlkem.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
           gh-repository: github.com/cryspen/libcrux
           group-by: os,keySize
