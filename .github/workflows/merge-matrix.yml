@@ -212,7 +212,7 @@ jobs:
         uses: cryspen/benchmark-upload-and-plot-action@v3
         with:
           name: ML-KEM Benchmark
-          input-data-path: libcrux-ml-kem/bench-processed.json
+          input-data-path: libcrux-ml-kem/bench-mlkem.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
           gh-repository: github.com/cryspen/libcrux
           group-by: os,keySize
