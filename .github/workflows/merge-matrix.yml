@@ -9,7 +9,7 @@ on:
     branches: ["main"]
 
 jobs:
-  benchmark:
+  bench-mlkem:
     strategy:
       fail-fast: true
       matrix:
@@ -81,16 +81,95 @@ jobs:
           tool: 'cargo'
           os: ${{ matrix.os }}_${{ matrix.bits }}
           output-file-path: libcrux-ml-kem/bench.txt
-          data-out-path: libcrux-ml-kem/benchdata-${{matrix.os}}-${{matrix.bits}}.json
+          data-out-path: benchdata-mlkem-${{matrix.os}}-${{matrix.bits}}.json
 
       - uses: actions/upload-artifact@v4
         with:
-          name: benchdata-${{matrix.os}}-${{matrix.bits}}.json
-          path: libcrux-ml-kem/benchdata-${{matrix.os}}-${{matrix.bits}}.json
+          name: benchdata-mlkem-${{matrix.os}}-${{matrix.bits}}.json
+          path: benchdata-mlkem-${{matrix.os}}-${{matrix.bits}}.json
+
+  bench-mldsa:
+    strategy:
+      fail-fast: true
+      matrix:
+        bits: [32, 64]
+        os:
+          - macos-13
+          - macos-latest
+          - ubuntu-latest
+          - windows-latest
+        exclude:
+          # There's no such thing as 32-bit macOS
+          - bits: 32
+            os: "macos-latest"
+          - bits: 32
+            os: "macos-13"
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+        working-directory: libcrux-ml-dsa
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: 'cryspen/libcrux'
+
+      # set up rust env
+
+      - name: Update dependencies
+        run: cargo update
+
+      - run: echo "RUST_TARGET_FLAG=" > $GITHUB_ENV
+        if: ${{ matrix.bits == 64 }}
+
+      - name: 🛠️ Setup Ubuntu x86
+        if: ${{ matrix.bits == 32 &&  matrix.os == 'ubuntu-latest' }}
+        run: |
+          rustup target add i686-unknown-linux-gnu
+          sudo apt-get update
+          sudo apt-get install -y gcc-multilib g++-multilib
+
+      - name: 🛠️ Setup macOS
+        if: ${{  matrix.os == 'macos-latest' }}
+        run: |
+          rustup target add aarch64-apple-darwin
+
+      # Set up 32 bit systems
+
+      - name: 🛠️ Config Windows x86
+        run: echo "RUST_TARGET_FLAG=--target=i686-pc-windows-msvc" > $GITHUB_ENV
+        if: ${{ matrix.bits == 32 && matrix.os == 'windows-latest' }}
+
+      - name: 🛠️ Config Linux x86
+        run: |
+          echo "RUST_TARGET_FLAG=--target=i686-unknown-linux-gnu" > $GITHUB_ENV
+        if: ${{ matrix.bits == 32 && matrix.os == 'ubuntu-latest' }}
+
+      # run benchmarks
+
+      - name: 🏃🏻‍♀️ Benchmarks
+        run: cargo bench --bench manual44 --bench manual65 --bench manual87 --verbose $RUST_TARGET_FLAG -- --output-format bencher | tee bench.txt
+
+      # extract benchmark json
+
+      - name: Extract benchmarks
+        uses: cryspen/benchmark-data-extract-transform@v2
+        with:
+          name: ML-DSA Benchmark
+          tool: 'cargo'
+          os: ${{ matrix.os }}_${{ matrix.bits }}
+          output-file-path: libcrux-ml-dsa/bench.txt
+          data-out-path: benchdata-mldsa-${{matrix.os}}-${{matrix.bits}}.json
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: benchdata-mldsa-${{matrix.os}}-${{matrix.bits}}.json
+          path: benchdata-mldsa-${{matrix.os}}-${{matrix.bits}}.json
 
   merge:
     runs-on: ubuntu-latest
-    needs: benchmark
+    needs: [bench-mlkem, bench-mldsa]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -102,12 +181,30 @@ jobs:
           pattern: benchdata-*.json
           path: benchdata/
           merge-multiple: true
-      - run: jq -s add benchdata/* > benchdata-all.json
+      - run: |
+        jq -s add benchdata/benchdata-mlkem-* > benchdata-mlkem.json
+        jq -s add benchdata/benchdata-mldsa-* > benchdata-mldsa.json
       - uses: cryspen/benchmark-comment-and-plot-action@main
         with:
           gh-repository: cryspen/libcrux
           group-by: os,keySize
           schema: category,keySize,name,platform,api,os
-          input-data-path: benchdata-all.json
+          input-data-path: benchdata-mlkem.json
           name: ML-KEM Benchmark
+          output-md: report-mlkem.md
+      - uses: cryspen/benchmark-comment-and-plot-action@main
+        with:
+          gh-repository: cryspen/libcrux
+          group-by: label,keySize,os
+          schema: implementation,keySize,label,hardware,os
+          input-data-path: benchdata-mldsa.json
+          name: ML-DSA Benchmark
+          output-md: report-mldsa.md
+      - run: |
+          cat >comment.md <<EOF
+
+          # Benchmark Report
+          $(cat report-mlkem.md)
+          $(cat report-mldsa.md)
+          EOF
 
