@@ -182,8 +182,8 @@ jobs:
           path: benchdata/
           merge-multiple: true
       - run: |
-        jq -s add benchdata/benchdata-mlkem-* > benchdata-mlkem.json
-        jq -s add benchdata/benchdata-mldsa-* > benchdata-mldsa.json
+          jq -s add benchdata/benchdata-mlkem-* > benchdata-mlkem.json
+          jq -s add benchdata/benchdata-mldsa-* > benchdata-mldsa.json
       - uses: cryspen/benchmark-comment-and-plot-action@main
         with:
           gh-repository: cryspen/libcrux
