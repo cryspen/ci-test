@@ -200,7 +200,7 @@ jobs:
           name: ML-DSA Benchmark
           input-data-path: benchdata-mldsa.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          gh-repository: github.com/libcrux
+          gh-repository: github.com/cryspen/libcrux
           group-by: label,keySize,os
           schema: implementation,keySize,label,hardware,os
           auto-push: false
@@ -214,7 +214,7 @@ jobs:
           name: ML-KEM Benchmark
           input-data-path: libcrux-ml-kem/bench-processed.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          gh-repository: github.com/libcrux
+          gh-repository: github.com/cryspen/libcrux
           group-by: os,keySize
           schema: category,keySize,name,platform,api,os
           auto-push: false
