@@ -203,11 +203,24 @@ jobs:
           name: ML-DSA Benchmark
           output-md: report-mldsa.md
       - run: |
+          BASE_HASH="${{ github.event.pull_request.base.sha }}"
+          BASE_HASH_SHORT=$(echo "${{ github.event.pull_request.base.sha }}" | cut -c1-7)
+
+          PR_HEAD_HASH="${{ github.event.pull_request.head.sha }}"
+          PR_HEAD_HASH_SHORT=$(echo "${{ github.event.pull_request.head.sha }}" | cut -c1-7)
+
+          PR_COMMIT_URL="${{ github.server_url }}/${{ github.repository }}/commit/${PR_HEAD_HASH}"
+          BASE_COMMIT_URL="${{ github.server_url }}/${{ github.repository }}/commit/${BASE_HASH}"
+
           cat >comment.md <<EOF
           *beep boop, I am the benchmark bot*
 
+          Comparing PR commit [$PR_HEAD_HASH_SHORT]($PR_COMMIT_URL) against baseline [$BASE_HASH_SHORT]($BASE_COMMIT_URL).
+
           # Benchmark Report
+
           $(cat report-mlkem.md)
+
           $(cat report-mldsa.md)
           EOF
       - uses: mshick/add-pr-comment@v2
