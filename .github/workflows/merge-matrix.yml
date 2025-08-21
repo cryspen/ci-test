@@ -181,10 +181,49 @@ jobs:
           pattern: benchdata-*.json
           path: benchdata/
           merge-multiple: true
-      - run: |
+
+      - name: Join per-run data
+        run: |
           jq -s add benchdata/benchdata-mlkem-* > benchdata-mlkem.json
           jq -s add benchdata/benchdata-mldsa-* > benchdata-mldsa.json
+
+      # check if the PR branch is on a fork. if it is, post comments.
+      # otherwise, generate page and merge it.
+      - name: Set IS_FORK environment variable
+        run: echo "IS_FORK=${{ github.event.pull_request.head.repo.fork }}" >> $GITHUB_ENV
+
+      # if not a fork, use page generation action
+      - name: Upload ML-DSA benchmarks
+        if: env.IS_FORK == 'false'
+        uses: cryspen/benchmark-upload-and-plot-action@v3
+        with:
+          name: ML-DSA Benchmark
+          input-data-path: benchdata-mldsa.json
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          gh-repository: github.com/${{ github.repository }}
+          group-by: label,keySize,os
+          schema: implementation,keySize,label,hardware,os
+          auto-push: false
+          fail-on-alert: true
+          alert-threshold: 200%
+
+      - name: Upload ML-KEM benchmarks
+        if: env.IS_FORK == 'false'
+        uses: cryspen/benchmark-upload-and-plot-action@v3
+        with:
+          name: ML-KEM Benchmark
+          input-data-path: libcrux-ml-kem/bench-processed.json
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          gh-repository: github.com/${{ github.repository }}
+          group-by: os,keySize
+          schema: category,keySize,name,platform,api,os
+          auto-push: false
+          fail-on-alert: true
+          alert-threshold: 200%
+
+      # if a fork, use comment-based action
       - uses: cryspen/benchmark-comment-and-plot-action@main
+        if: env.IS_FORK == 'true'
         with:
           id: mlkem
           gh-repository: cryspen/libcrux
@@ -193,7 +232,9 @@ jobs:
           input-data-path: benchdata-mlkem.json
           name: ML-KEM Benchmark
           output-md: report-mlkem.md
+
       - uses: cryspen/benchmark-comment-and-plot-action@main
+        if: env.IS_FORK == 'true'
         with:
           id: mldsa
           gh-repository: cryspen/libcrux
@@ -202,7 +243,10 @@ jobs:
           input-data-path: benchdata-mldsa.json
           name: ML-DSA Benchmark
           output-md: report-mldsa.md
-      - run: |
+
+      - name: Build comment
+        if: env.IS_FORK == 'true'
+        run: |
           BASE_HASH="${{ github.event.pull_request.base.sha }}"
           BASE_HASH_SHORT=$(echo "${{ github.event.pull_request.base.sha }}" | cut -c1-7)
 
@@ -218,12 +262,13 @@ jobs:
           Comparing PR commit [$PR_HEAD_HASH_SHORT]($PR_COMMIT_URL) against baseline [$BASE_HASH_SHORT]($BASE_COMMIT_URL).
 
           # Benchmark Report
-
+          
           $(cat report-mlkem.md)
 
           $(cat report-mldsa.md)
           EOF
       - uses: mshick/add-pr-comment@v2
+        if: env.IS_FORK == 'true'
         with:
           message-path: comment.md
 
